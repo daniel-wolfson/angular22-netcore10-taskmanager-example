@@ -1,0 +1,17 @@
+server/bin/
+server/obj/
+client/node_modules/
+client/dist/
+/.vs/
+/server/.vs/TaskManager.Api.slnx/copilot-chat/64c840bf/sessions
+/server/.vs/TaskManager.Api.slnx/FileContentIndex
+/server/.vs/TaskManager.Api.slnx/DesignTimeBuild
+/server/.vs
+/server/TaskManager.Api.Tests/bin/Debug/net10.0
+/server/TaskManager.Api.Tests/obj
+/server/logs
+/server/TaskManager.Api/.vs/ProjectEvaluation
+/server/TaskManager.Api/.vs
+/server/TaskManager.Api/bin/Debug/net10.0
+/server/TaskManager.Api/obj
+/server/TaskManager.Api/logs

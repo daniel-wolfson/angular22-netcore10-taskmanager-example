@@ -1,0 +1,55 @@
+<div class="toolbar">
+  <label for="search">
+    Search by title
+    @if (loading()) {
+      <span class="spinner" aria-label="Loading..."></span>
+    }
+  </label>
+
+  <input
+    id="search"
+    type="text"
+    [value]="search()"
+    (input)="setSearch($any($event.target).value)"
+    placeholder="Search tasks..."
+  />
+</div>
+
+@let tasks = filteredTasks();
+
+@if (tasks.length === 0) {
+  <div class="no-tasks">No tasks found.</div>
+} @else {
+  <table class="tasks">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Created Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (task of tasks; track task.id) {
+        <tr>
+          <td class="id">{{ task.id }}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td class="date">{{ task.createdDate | date: 'dd.MM.yyyy hh:mm a' }}</td>
+          <td class="status">
+            <span class="badge" [class.done]="task.status === 'Done'">
+              {{ task.status }}
+            </span>
+          </td>
+          <td class="actions">
+            <button type="button" (click)="markAsDone(task.id)" [disabled]="task.status === 'Done'">
+              Mark as Done
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

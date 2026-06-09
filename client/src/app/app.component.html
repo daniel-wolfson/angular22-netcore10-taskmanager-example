@@ -1,0 +1,13 @@
+<main class="container">
+  <h1>Task Manager</h1>
+
+  <section class="panel">
+    <h2 class="title">Create Task</h2>
+    <app-create-task (created)="handleCreated($event)" />
+  </section>
+
+  <section class="panel">
+    <h2 class="title">Tasks</h2>
+    <app-task-list [tasks]="tasks()" [loading]="loading()" (markDone)="handleMarkDone($event)" />
+  </section>
+</main>

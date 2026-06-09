@@ -1,0 +1,24 @@
+.container {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f4f9fd96;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.title {
+  font-weight: bold;
+  color: #2987d4;
+}
+
