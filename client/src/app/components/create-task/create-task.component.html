@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+  <div class="field">
+    <label for="title">Title</label>
+    <input id="title" type="text" formControlName="title" />
+    @if (form.controls.title.touched && form.controls.title.invalid) {
+      <div class="error">
+        @if (form.controls.title.errors?.['required']) {
+          <span>Title is required.</span>
+        }
+        @if (form.controls.title.errors?.['minlength']) {
+          <span>Title must be at least 3 characters.</span>
+        }
+        @if (form.controls.title.errors?.['maxlength']) {
+          <span>Title must be at most 100 characters.</span>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description" rows="3"></textarea>
+  </div>
+
+  <button type="submit">Create Task</button>
+</form>
