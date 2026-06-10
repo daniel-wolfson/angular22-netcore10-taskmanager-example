@@ -2,7 +2,7 @@
   <div class="field">
     <label for="title">Title</label>
     <input id="title" type="text" formControlName="title" />
-    @if (form.controls.title.touched && form.controls.title.invalid) {
+    @if (form.controls.title.invalid) {
       <div class="error">
         @if (form.controls.title.errors?.['required']) {
           <span>Title is required.</span>

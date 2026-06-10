@@ -8,6 +8,11 @@
 
   <section class="panel">
     <h2 class="title">Tasks</h2>
-    <app-task-list [tasks]="tasks()" [loading]="loading()" (markDone)="handleMarkDone($event)" />
+    <app-task-list
+      [tasks]="tasks()"
+      [loading]="loading()"
+      [errorMessage]="errorMessage()"
+      (markDone)="handleMarkDone($event)"
+    />
   </section>
 </main>

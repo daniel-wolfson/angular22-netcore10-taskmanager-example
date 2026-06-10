@@ -45,7 +45,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .badge {
@@ -69,7 +71,16 @@
   border-radius: 0.375rem;
 }
 
-.tasks td.actions, .tasks td.status, .tasks td.date {
+.no-tasks.error {
+  color: #991b1b;
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  border-style: solid;
+}
+
+.tasks td.actions,
+.tasks td.status,
+.tasks td.date {
   text-align: center;
   vertical-align: middle;
 }

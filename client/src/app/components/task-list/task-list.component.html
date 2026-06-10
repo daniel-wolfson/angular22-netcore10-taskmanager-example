@@ -1,7 +1,7 @@
 <div class="toolbar">
   <label for="search">
     Search by title
-    @if (loading()) {
+    @if (loading() && !errorMessage()) {
       <span class="spinner" aria-label="Loading..."></span>
     }
   </label>
@@ -17,7 +17,9 @@
 
 @let tasks = filteredTasks();
 
-@if (tasks.length === 0) {
+@if (errorMessage()) {
+  <div class="no-tasks error">{{ errorMessage() }}</div>
+} @else if (tasks.length === 0) {
   <div class="no-tasks">No tasks found.</div>
 } @else {
   <table class="tasks">
